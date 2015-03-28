@@ -1,0 +1,44 @@
+<link rel="import" href="https://2cab68f1.srvdir.net/bower_components/google-map/google-map.html">
+<link rel="import" href="https://2cab68f1.srvdir.net/bower_components/google-map/google-map-directions.html">
+
+<polymer-element name="my-map">
+
+  <template>
+    <style>
+      :host {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+      }
+      #google_map {
+        width: 100%;
+        height: 100%px;
+        display: block;
+        position: absolute;
+      }
+    </style>
+<!--     <google-map-directions map="{{map}}"
+      startAddress="1200 hull st baltimore, md"
+      endAddress="1210 hull st baltimore, md"
+      travelMode="BICYCLING" zoom="14">
+    </google-map-directions> -->
+
+    <google-map map="{{map}}" latitude="39.272948" longitude="-76.591897" id="google_map" zoom="17">
+      <google-map-marker latitude="39.272948" longitude="-76.591897"
+      title="Go Giants!">
+        <p>I'm putting it inside</p>
+        <img src="http://stream1.gifsoup.com/view6/4712606/kittens-fighting-part-1-o.gif" />
+      </google-map-marker>
+    </google-map>
+  </template>
+
+  <script>
+
+    Polymer({
+
+    });
+
+  </script>
+
+</polymer-element>

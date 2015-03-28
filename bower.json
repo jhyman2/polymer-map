@@ -1,0 +1,20 @@
+{
+  "name": "Sarah's map",
+  "version": "0.0.0",
+  "authors": [
+    "Jamison Hyman <jhyman2@umbc.edu>"
+  ],
+  "description": "blah blah",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.5.5",
+    "google-map": "Polymer/google-map#~0.4.2"
+  }
+}
