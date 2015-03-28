@@ -1,3 +1,9 @@
+Description
+-----------
+
+    A simple google map element using polymer.
+
+
 Installation
 -----------
 
