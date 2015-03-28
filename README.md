@@ -1,4 +1,4 @@
-*To build project:
-\bash
-bower install
-\
+Installation
+-----------
+
+    bower install
