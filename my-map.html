@@ -1,5 +1,5 @@
-<link rel="import" href="https://9d8e3bef.srvdir.net/bower_components/google-map/google-map.html">
-<link rel="import" href="https://9d8e3bef.srvdir.net/bower_components/google-map/google-map-directions.html">
+<link rel="import" href="https://f499fef6.srvdir.net/bower_components/google-map/google-map.html">
+<link rel="import" href="https://f499fef6.srvdir.net/bower_components/core-ajax/core-ajax.html">
 
 <polymer-element name="my-map">
 
@@ -8,37 +8,42 @@
       :host {
         position: absolute;
         width: 100%;
-        height: 100%;
         box-sizing: border-box;
       }
       #google_map {
-        width: 100%;
-        height: 100%px;
-        display: block;
-        position: absolute;
+        height:400px;
       }
     </style>
-
-    <!-- Uncomment this code to show directions -->
-<!--  <google-map-directions map="{{map}}"
-      startAddress="1200 hull st baltimore, md"
-      endAddress="1210 hull st baltimore, md"
-      travelMode="BICYCLING" zoom="14">
-      </google-map-directions> -->
-
-    <google-map map="{{map}}" latitude="39.272948" longitude="-76.591897" id="google_map" zoom="17">
-      <google-map-marker latitude="39.272948" longitude="-76.591897"
-      title="Go Giants!">
-        <p>Put a video stream here</p>
-        <img src="http://stream1.gifsoup.com/view6/4712606/kittens-fighting-part-1-o.gif" />
-      </google-map-marker>
-    </google-map>
+    <core-ajax
+        auto
+        url="https://s3.amazonaws.com/uploads.hipchat.com/107111/789315/gejty0Pwb1nkuCs/incidents.json"
+        params='{"alt":"json", "q":"chrome"}'
+        handleAs="json"
+        on-core-response="{{gotResponse}}">
+    </core-ajax>
+      <google-map map="{{map}}" latitude="36.14678898" longitude="-86.85700000" id="google_map" zoom="6">
+        <template repeat="{{inc in incidents}}">
+          <google-map-marker latitude='{{inc.loc.coordinates[1]}}' longitude='{{inc.loc.coordinates[0]}}' title='{{inc.title}}'>
+            <dl>
+              <dt>Title</dt>
+              <dd>{{inc.title}}</dd>
+              <dt>Details</dt>
+              <dd>{{inc.details}}</dd>
+              <dt>Time</dt>
+              <dd>{{inc.time_received}}</dd>
+            </dl>
+          </google-map-marker>
+        </template>
+      </google-map>
   </template>
 
   <script>
 
     Polymer({
-
+      gotResponse: function(event, response){
+        this.incidents = response.response;
+        console.log(this.incidents);
+      }
     });
 
   </script>

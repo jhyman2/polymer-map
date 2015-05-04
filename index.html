@@ -1,17 +1,75 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Map</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="import" href="https://9d8e3bef.srvdir.net/my-map.html">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    </head>
-    <body>
-        <my-map></my-map>
-        <script src="https://9d8e3bef.srvdir.net/bower_components/webcomponentsjs/webcomponents.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    </body>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Map</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="import" href="https://f499fef6.srvdir.net/my-map.html">
+  <link rel="import" href="https://f499fef6.srvdir.net/my-list.html">
+  <link rel="import" href="https://f499fef6.srvdir.net/my-header.html">
+  <link rel="import" href="https://f499fef6.srvdir.net/my-video.html">
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+  <link href="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+  <script src="//vjs.zencdn.net/4.12/video.js"></script>
+  <style>
+    body {
+      height: 100vh;
+    }
+    .row {
+      height: 40%;
+    }
+    .full-width {
+      width:100% !important;
+      height:400px !important;
+      margin-bottom:10px;
+    }
+  </style>
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+</head>
+<body unresolved fullbleed>
+  <my-header class="text-center"></my-header>
+  <div class="row">
+    <div class="col-md-6">
+      <my-list></my-list>
+    </div>
+    <div class="col-md-3">
+      <!-- <my-video source="rtmp://172.28.95.13:1935/rtplive/HamptonRoads879"></my-video> -->
+      <video id="" class="video-js vjs-default-skin full-width" preload="auto" data-setup='{ "autoplay": true, "techOrder": ["flash"] }'>
+        <source src="rtmp://172.28.95.13:1935/rtplive/HamptonRoads879" type="rtmp/mp4">
+      </video>
+    </div>
+    <div class="col-md-3">
+      <!-- <my-video source="rtmp://172.28.95.13:1935/rtplive/HamptonRoads879"></my-video> -->
+      <video id="" class="video-js vjs-default-skin full-width" preload="auto" data-setup='{ "autoplay": true, "techOrder": ["flash"] }'>
+        <source src="rtmp://172.28.95.13:1935/rtplive/HamptonRoads871" type="rtmp/mp4">
+      </video>
+    </div>
+  </div>
+  <div class="row" style="height:100%;">
+    <div class="col-md-6">
+      <my-map></my-map>
+    </div>
+    <div class="col-md-3">
+      <!-- <my-video source="rtmp://172.28.95.13:1935/rtplive/HamptonRoads879"></my-video> -->
+      <video id="" class="video-js vjs-default-skin full-width" preload="auto" data-setup='{ "autoplay": true, "techOrder": ["flash"] }'>
+        <source src="rtmp://172.28.95.13:1935/rtplive/HamptonRoads872" type="rtmp/mp4">
+      </video>
+    </div>
+    <div class="col-md-3">
+      <!-- <my-video source="rtmp://172.28.95.13:1935/rtplive/HamptonRoads879"></my-video> -->
+      <video id="" class="video-js vjs-default-skin full-width" preload="auto" data-setup='{ "autoplay": true, "techOrder": ["flash"] }'>
+        <source src="rtmp://172.28.95.13:1935/rtplive/HamptonRoads873" type="rtmp/mp4">
+      </video>
+    </div>
+  </div>
+
+    <script src="https://f499fef6.srvdir.net/bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </body>
 </html>

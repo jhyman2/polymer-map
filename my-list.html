@@ -1,0 +1,33 @@
+<link rel="import" href="https://f499fef6.srvdir.net/bower_components/core-ajax/core-ajax.html">
+
+<polymer-element name="my-list">
+
+  <template>
+   <core-ajax
+        auto
+        url="https://s3.amazonaws.com/uploads.hipchat.com/107111/789315/gejty0Pwb1nkuCs/incidents.json"
+        params='{"alt":"json", "q":"chrome"}'
+        handleAs="json"
+        on-core-response="{{gotResponse}}">
+    </core-ajax>
+
+    <h3 class="text-center" style="text-align:center;">Incidents</h3>
+    <ul class="list-group">
+      <template repeat="{{inc in incidents}}">
+        <li class="list-group-item">{{inc.title}}</li>
+      </template>
+    </ul>
+  </template>
+
+  <script>
+
+    Polymer({
+      gotResponse: function(event, response){
+        this.incidents = response.response;
+        console.log(this.incidents);
+      }
+    });
+
+  </script>
+
+</polymer-element>
