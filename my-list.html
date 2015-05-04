@@ -1,7 +1,6 @@
 <link rel="import" href="https://f499fef6.srvdir.net/bower_components/core-ajax/core-ajax.html">
 
 <polymer-element name="my-list">
-
   <template>
    <core-ajax
         auto
@@ -10,7 +9,6 @@
         handleAs="json"
         on-core-response="{{gotResponse}}">
     </core-ajax>
-
     <h3 class="text-center" style="text-align:center;">Incidents</h3>
     <ul class="list-group">
       <template repeat="{{inc in incidents}}">
@@ -20,14 +18,11 @@
   </template>
 
   <script>
-
     Polymer({
       gotResponse: function(event, response){
         this.incidents = response.response;
-        console.log(this.incidents);
       }
     });
-
   </script>
 
 </polymer-element>

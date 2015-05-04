@@ -2,7 +2,6 @@
 <link rel="import" href="https://f499fef6.srvdir.net/bower_components/core-ajax/core-ajax.html">
 
 <polymer-element name="my-map">
-
   <template>
     <style>
       :host {
@@ -38,14 +37,11 @@
   </template>
 
   <script>
-
     Polymer({
       gotResponse: function(event, response){
         this.incidents = response.response;
-        console.log(this.incidents);
       }
     });
-
   </script>
 
 </polymer-element>
