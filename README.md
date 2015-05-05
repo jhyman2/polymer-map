@@ -10,4 +10,11 @@ Description
 Installation
 -----------
 
-    bower install (change network source in html files)
+    - bower install (change network source in html files)
+    - install srvdir from https://srvdir.net
+    - run ./srvdir path/to/this/project
+    
+Necessary Code Changes
+-----------
+    
+    - After running srvdir, change all srvdir imports and references to your own srvidr URL.
