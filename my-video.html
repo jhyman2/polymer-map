@@ -1,29 +1,22 @@
-<link href="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+<polymer-element name="my-video" attributes="source type">
 
-<polymer-element name="my-video">
-  <style>
-    .full-width {
-      width:100% !important;
-      height:400px !important;
-      margin-bottom:10px;
-    }
-  </style>
   <template>
-      <video id="video1" class="video-js vjs-default-skin full-width" preload="auto">
-        <source src="rtmp://172.28.95.13:1935/rtplive/HamptonRoads879" type="rtmp/mp4">
-      </video>
+    <link href="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://f499fef6.srvdir.net/screen.css">
+    <video id="video1" class="video-js vjs-default-skin full-width">
+      <source src="rtmp://172.28.95.13:1935/rtplive/HamptonRoads879" type="rtmp/mp4" />
+    </video>
   </template>
 
-  <script src="//vjs.zencdn.net/4.12/video.js"></script>
   <script>
-    Polymer('my-video', {
-      loadStuff: function () {
-        videojs($($(Polymer.elements[10])[0]).find('template').html(), {}, function(){
-          // Player (this) is initialized and ready.
-          console.log(this);
+    Polymer({
+      ready: function () {
+        videojs(this.$.video1, {
+          'controls': false,
+          'autoplay': true,
+          'techOrder': ['flash']
         });
       }
     });
   </script>
-
 </polymer-element>

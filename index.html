@@ -21,14 +21,14 @@
       <my-list></my-list>
     </div>
     <div class="col-md-3">
-      <!-- <my-video source="rtmp://172.28.95.13:1935/rtplive/HamptonRoads879"></my-video> -->
-      <video id="" class="video-js vjs-default-skin full-width" preload="auto" data-setup='{ "autoplay": true, "techOrder": ["flash"] }'>
+      <my-video></my-video>
+<!--       <video id="" class="video-js vjs-default-skin full-width" preload="auto" data-setup='{ "autoplay": true, "techOrder": ["flash"] }'>
         <source src="rtmp://172.28.95.13:1935/rtplive/HamptonRoads879" type="rtmp/mp4">
-      </video>
+      </video> -->
     </div>
     <div class="col-md-3">
       <!-- <my-video source="rtmp://172.28.95.13:1935/rtplive/HamptonRoads879"></my-video> -->
-      <video id="" class="video-js vjs-default-skin full-width" preload="auto" data-setup='{ "autoplay": true, "techOrder": ["flash"] }'>
+      <video id="video2" class="video-js vjs-default-skin full-width">
         <source src="rtmp://172.28.95.13:1935/rtplive/HamptonRoads871" type="rtmp/mp4">
       </video>
     </div>
@@ -39,20 +39,33 @@
     </div>
     <div class="col-md-3">
       <!-- <my-video source="rtmp://172.28.95.13:1935/rtplive/HamptonRoads879"></my-video> -->
-      <video id="" class="video-js vjs-default-skin full-width" preload="auto" data-setup='{ "autoplay": true, "techOrder": ["flash"] }'>
+<!--       <video id="" class="video-js vjs-default-skin full-width" preload="auto" data-setup='{ "autoplay": true, "techOrder": ["flash"] }'>
         <source src="rtmp://172.28.95.13:1935/rtplive/HamptonRoads872" type="rtmp/mp4">
-      </video>
+      </video> -->
     </div>
     <div class="col-md-3">
       <!-- <my-video source="rtmp://172.28.95.13:1935/rtplive/HamptonRoads879"></my-video> -->
-      <video id="" class="video-js vjs-default-skin full-width" preload="auto" data-setup='{ "autoplay": true, "techOrder": ["flash"] }'>
+<!--       <video id="" class="video-js vjs-default-skin full-width" preload="auto" data-setup='{ "autoplay": true, "techOrder": ["flash"] }'>
         <source src="rtmp://172.28.95.13:1935/rtplive/HamptonRoads873" type="rtmp/mp4">
-      </video>
+      </video> -->
     </div>
   </div>
-    <script src="https://f499fef6.srvdir.net/bower_components/webcomponentsjs/webcomponents.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="//vjs.zencdn.net/4.12/video.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        videojs('video2', {
+          'controls': false,
+          'autoplay': true,
+          'techOrder': ['flash'],
+          'preload': 'auto'
+        }, function(){
+          // Player (this) is initialized and ready.
+          console.log('hello');
+        });
+      });
+    </script>
   </body>
 </html>
