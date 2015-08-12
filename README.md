@@ -18,3 +18,5 @@ Necessary Code Changes
 -----------
     
     - After running srvdir, change all srvdir imports and references to your own srvidr URL.
+
+![SS1](https://i.gyazo.com/aa82fb2bc1deae50fac17cb75a42662e.gif)
